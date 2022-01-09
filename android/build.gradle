@@ -56,4 +56,5 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation 'org.bitbucket.b_c:jose4j:0.7.9'
 }

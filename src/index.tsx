@@ -17,6 +17,6 @@ const Vc = NativeModules.Vc
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return Vc.multiply(a, b);
+export function verifySignature(jwtStr: string) {
+  return Vc.verifySignature(jwtStr);
 }
