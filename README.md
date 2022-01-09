@@ -11,11 +11,11 @@ npm install react-native-vc
 ## Usage
 
 ```js
-import { multiply } from "react-native-vc";
+import { verifySignature } from "react-native-vc";
 
 // ...
 
-const result = await multiply(3, 7);
+const isVerified = verifySignature(jwtStr);
 ```
 
 ## Contributing
