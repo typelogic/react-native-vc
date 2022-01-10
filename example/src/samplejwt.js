@@ -3,6 +3,17 @@ Two sample JWT tokens that uses RS256 signature:
 
 samplejwt.valid - This is a valid and verifiable JWT
 samplejwt.invalid - This is an invalid JWT due to its expired certificate
+
+How to construct the JWT string from a json VID. From an existing sample VID
+at https://github.com/idpass/idpass-mosip-resident-app/blob/feature/Backend-Request-VID-from-MOSIP-4/backend/src/main/resources/7213584925_EVENT.json file:
+
+const fs = require('fs')
+const vid = fs.readFileSync('7213584925_EVENT.json')
+const vidJson = JSON.parse(vid)
+var parts = vidJson.event.data.proof.signature.split('.')
+const jwtStr = parts[0] + '.' + vidJson.event.data.credential + parts[2]
+
+var isValid = verifySignature(jwtStr) // then verify the signature of jwtStr
 */
 
 var samplejwt = {
