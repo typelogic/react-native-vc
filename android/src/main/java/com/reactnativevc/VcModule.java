@@ -16,6 +16,8 @@
 
 package com.reactnativevc;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -60,6 +62,7 @@ public class VcModule extends ReactContextBaseJavaModule {
             isValid = jws.verifySignature();
         } catch (JoseException | CertificateNotYetValidException |
             CertificateExpiredException e) {
+            Log.d(NAME, e.getMessage());
         }
         return  isValid;
     }

@@ -1,18 +1,19 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-vc';
+import { verifySignature } from 'react-native-vc';
+import samplejwt from './samplejwt';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [result, setResult] = React.useState<Boolean>(false);
 
   React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+    setResult(verifySignature(samplejwt.valid));
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Result: {result.toString()}</Text>
     </View>
   );
 }

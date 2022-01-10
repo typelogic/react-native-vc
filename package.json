@@ -1,6 +1,6 @@
 {
   "name": "react-native-vc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "JWT Verifiable Credential",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
