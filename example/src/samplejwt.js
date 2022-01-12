@@ -11,7 +11,7 @@ const fs = require('fs')
 const vid = fs.readFileSync('7213584925_EVENT.json')
 const vidJson = JSON.parse(vid)
 var parts = vidJson.event.data.proof.signature.split('.')
-const jwtStr = parts[0] + '.' + vidJson.event.data.credential + parts[2]
+const jwtStr = parts[0] + '.' + vidJson.event.data.credential + '.' +  parts[2]
 
 var isValid = verifySignature(jwtStr) // then verify the signature of jwtStr
 */
